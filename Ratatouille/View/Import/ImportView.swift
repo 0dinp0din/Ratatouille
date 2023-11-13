@@ -83,5 +83,8 @@ struct ImportView: View {
 
 #Preview
 {
-    ImportView().modelContainer(for: [CategoryModel.self, AreaModel.self])
+    MainActor.assumeIsolated {
+        ImportView().modelContainer(for: [CategoryModel.self, AreaModel.self])
+    }
+
 }

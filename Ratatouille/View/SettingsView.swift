@@ -1,7 +1,10 @@
 import SwiftUI
+import SwiftData
 
 struct SettingsView: View {
     @AppStorage("isDarkMode") private var darkMode = false
+    
+    @State private var database = ""
     
     var body: some View 
     {
@@ -40,6 +43,25 @@ struct SettingsView: View {
                         Label("Importer", systemImage: "square.and.arrow.down.on.square.fill")
                     }
                 }
+                
+                Button
+                {
+                  guard let urlApp = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).last
+                  else
+                  {
+                    return
+                  }
+                  
+                  let url = urlApp.appendingPathComponent("default.store")
+                  if FileManager.default.fileExists(atPath: url.path)
+                  {
+                    database = url.absoluteString
+                  }
+                }
+                label:
+                {
+                  Label("Vis database lokasjon", systemImage: "internaldrive.fill")
+                }
             }
             .navigationTitle("Innstillinger")
         }
@@ -48,5 +70,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
+    SettingsView().modelContainer(for: [CategoryModel.self, AreaModel.self])
 }

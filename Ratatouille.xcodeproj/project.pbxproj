@@ -26,6 +26,8 @@
 		BFEB417B2B0278FC00844AE0 /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB417A2B0278FC00844AE0 /* ImportView.swift */; };
 		BFEB417F2B02857700844AE0 /* AreaJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB417E2B02857700844AE0 /* AreaJson.swift */; };
 		BFEB41812B0289DB00844AE0 /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB41802B0289DB00844AE0 /* ArchiveView.swift */; };
+		BFEB418F2B02A9F100844AE0 /* IngredientJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB418E2B02A9F100844AE0 /* IngredientJson.swift */; };
+		BFEB41912B02AA8E00844AE0 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB41902B02AA8E00844AE0 /* Ingredient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		BFEB417A2B0278FC00844AE0 /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
 		BFEB417E2B02857700844AE0 /* AreaJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaJson.swift; sourceTree = "<group>"; };
 		BFEB41802B0289DB00844AE0 /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
+		BFEB418E2B02A9F100844AE0 /* IngredientJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientJson.swift; sourceTree = "<group>"; };
+		BFEB41902B02AA8E00844AE0 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				BFEB41632B02297800844AE0 /* CategoryJson.swift */,
 				BFEB41652B022D0900844AE0 /* RecipeJson.swift */,
 				BFEB417E2B02857700844AE0 /* AreaJson.swift */,
+				BFEB418E2B02A9F100844AE0 /* IngredientJson.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				BFEB41682B022D5300844AE0 /* Recipe.swift */,
 				BFEB416A2B022D6300844AE0 /* Category.swift */,
 				BFEB41732B024D7C00844AE0 /* Area.swift */,
+				BFEB41902B02AA8E00844AE0 /* Ingredient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +268,8 @@
 				BFEB41762B025A9C00844AE0 /* CategoryView.swift in Sources */,
 				BFEB41692B022D5300844AE0 /* Recipe.swift in Sources */,
 				BFEB415F2B02207300844AE0 /* SettingsView.swift in Sources */,
+				BFEB418F2B02A9F100844AE0 /* IngredientJson.swift in Sources */,
+				BFEB41912B02AA8E00844AE0 /* Ingredient.swift in Sources */,
 				BFEB415B2B02205200844AE0 /* RecipeView.swift in Sources */,
 				BFEB414A2B021E0D00844AE0 /* RatatouilleApp.swift in Sources */,
 				BFEB417B2B0278FC00844AE0 /* ImportView.swift in Sources */,
