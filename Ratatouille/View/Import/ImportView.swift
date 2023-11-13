@@ -46,7 +46,7 @@ struct ImportView: View {
                                 let area = AreaModel(strArea: areas[index].strArea)
                                 context.insert(area)
                             }
-                            status += "kategoriene er lagret i databasen. \n "
+                            status += "Landområdene er lagret i databasen. \n "
                         } else {
                             status += "Error \n"
                         }
@@ -56,7 +56,6 @@ struct ImportView: View {
                 }
                 
                 //Button 3
-                //button 2
                 Button {
                     Task {
                         ingredients = await getIngredient()
@@ -98,6 +97,42 @@ struct ImportView: View {
                 label:
                 {
                   Label("Slett kategorier i databasen", systemImage: "square.stack.3d.up")
+                }
+                
+                Button
+                {
+                  do
+                  {
+                    try context.delete(model: AreaModel.self)
+                      
+                  }
+                  catch
+                  {
+                    status += "Feil ved sletting av landområdene i databasen.\n"
+                  }
+                  status += "landområder er slettet fra databasen.\n"
+                }
+                label:
+                {
+                  Label("Slett landområder i databasen", systemImage: "square.stack.3d.up")
+                }
+                
+                Button
+                {
+                  do
+                  {
+                    try context.delete(model: IngredientModel.self)
+                      
+                  }
+                  catch
+                  {
+                    status += "Feil ved sletting av ingrediensene i databasen.\n"
+                  }
+                  status += "Ingredienser er slettet fra databasen.\n"
+                }
+                label:
+                {
+                  Label("Slett Ingredienser i databasen", systemImage: "square.stack.3d.up")
                 }
             }.navigationTitle("Importer data")
         }

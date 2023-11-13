@@ -15,10 +15,22 @@ struct CategoryView: View {
                     List(categories) {
                         category in
                         
-                        Text(category.strCategory)
+                        HStack {
+                            
+                            AsyncImage(url: URL(string: category.strCategoryThumb)) { image in
+                                image.resizable()
+                                    .scaledToFit()
+                                    .frame(width: 150, height: 150)
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            
+                            Text(category.strCategory)
+                        }
                     }
                 }
             }
+            .navigationTitle("Kategorier")
         }
     }
 }

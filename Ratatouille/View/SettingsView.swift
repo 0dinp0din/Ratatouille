@@ -40,7 +40,7 @@ struct SettingsView: View {
                 
                 Section {
                     NavigationLink(destination: ImportView()) {
-                        Label("Importer data", systemImage: "square.and.arrow.down.on.square.fill")
+                        Label("Importer/Slett data", systemImage: "square.and.arrow.down.on.square.fill")
                     }
                 }
                 
@@ -71,5 +71,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView().modelContainer(for: [CategoryModel.self, AreaModel.self])
+    SettingsView().modelContainer(for: [CategoryModel.self, AreaModel.self, IngredientModel.self])
 }

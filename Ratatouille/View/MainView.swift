@@ -33,5 +33,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    MainView().modelContainer(for: [RecipeModel.self, CategoryModel.self, AreaModel.self, IngredientModel.self])
 }
