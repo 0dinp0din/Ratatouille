@@ -14,6 +14,8 @@ struct AreaView: View {
                 } else {
                     List(areas) {
                         area in 
+                        
+                        Text(area.strArea)
                     }
                 }
             }

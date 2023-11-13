@@ -14,6 +14,8 @@ struct CategoryView: View {
                 } else {
                     List(categories) {
                         category in
+                        
+                        Text(category.strCategory)
                     }
                 }
             }
@@ -22,5 +24,5 @@ struct CategoryView: View {
 }
 
 #Preview {
-    AreaView().modelContainer(for: AreaModel.self)
+    CategoryView().modelContainer(for: CategoryModel.self)
 }

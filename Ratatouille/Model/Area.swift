@@ -9,8 +9,7 @@ import SwiftData
     
     init(
         strArea: String = "",
-        countryCode: String = "",
-        strCategoryDescription: String = "") {
+        countryCode: String = "") {
             
             id = UUID()
             self.strArea = strArea
