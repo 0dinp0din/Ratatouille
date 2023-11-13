@@ -1,7 +1,8 @@
 import Foundation
 import SwiftData
 
-@Model class MealModel {
+@Model 
+final class RecipeModel {
     @Attribute(.unique) private var id: UUID
     let strCategory: String
     let strCategoryThumb: String

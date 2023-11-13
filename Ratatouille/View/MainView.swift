@@ -2,21 +2,32 @@ import SwiftUI
 import SwiftData
 
 struct MainView: View {
+    @AppStorage("isDarkMode") var darkMode = false
 
     var body: some View {
-        TabView {
-            RecipeView().tabItem {
-                Label("Mine oppskrifter", systemImage: "fork.knife.circle.fill")
-            }
+        
+        VStack {
+            Image("logo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 100)
+                .background()
             
-            SearchView().tabItem {
-                Label("Søk", systemImage: "magnifyingglass.circle.fill")
+            TabView {
+                RecipeView().tabItem {
+                    Label("Mine oppskrifter", systemImage: "fork.knife.circle.fill")
+                }
+                
+                SearchView().tabItem {
+                    Label("Søk", systemImage: "magnifyingglass.circle.fill")
+                }
+                
+                SettingsView().tabItem {
+                    Label("Innstillinger", systemImage: "gearshape.fill")
+                }
             }
-            
-            SettingsView().tabItem {
-                Label("Innstillinger", systemImage: "gearshape.fill")
-            }
-        }
+        }.background().environment(\.colorScheme, darkMode ? .dark : .light)
+
     }
         
 }

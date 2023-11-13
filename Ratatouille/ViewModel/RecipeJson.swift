@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct MealResponse: Decodable {
-    let meals: [Meal]
+struct RecipeResponse: Decodable {
+    let recipe: [Recipe]
 }
 
-struct Meal: Identifiable, Decodable {
+struct Recipe: Identifiable, Decodable {
     var id: Int { Int(idMeal) ?? 0 }
     let idMeal: String
     
@@ -17,11 +17,11 @@ struct Meal: Identifiable, Decodable {
 
 
 
-func getMeals(url: String) async -> [Meal]
+func getRecipes(url: String) async -> [Recipe]
 {
   guard let connection = URL(string: url) else
   {
-    return [Meal]()
+    return [Recipe]()
   }
   
   do
@@ -29,11 +29,11 @@ func getMeals(url: String) async -> [Meal]
 
     let (data, _) = try await URLSession.shared.data(from: connection)
       
-      return try JSONDecoder().decode(MealResponse.self, from: data).meals
+      return try JSONDecoder().decode(RecipeResponse.self, from: data).recipe
   }
   catch
   {
       print(error)
-    return [Meal]()
+    return [Recipe]()
   }
 }
