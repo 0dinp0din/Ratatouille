@@ -22,6 +22,7 @@ struct IngredientView: View {
                     }
                 }
             }
+            .navigationTitle("Ingredienser")
         }
     }
 }

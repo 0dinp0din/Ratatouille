@@ -4,6 +4,7 @@ import SwiftData
 @main
 struct RatatouilleApp: App {
     @State var isSplash = true
+    @AppStorage("firstLaunch") private var firstLaunch = true
     
     let modelContainer: ModelContainer
     
