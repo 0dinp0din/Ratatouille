@@ -1,32 +1,19 @@
-//
-//  RatatouilleApp.swift
-//  Ratatouille
-//
-//  Created by Odin Trefall on 13/11/2023.
-//
-
 import SwiftUI
 import SwiftData
 
 @main
 struct RatatouilleApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
+    @State var isSplash = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            
+            if isSplash {
+                SplashView(splash: $isSplash)
+            }
+            else {
+                MainView()
+            }
         }
-        .modelContainer(sharedModelContainer)
     }
 }
