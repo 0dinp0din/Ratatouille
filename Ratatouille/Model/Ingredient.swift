@@ -6,8 +6,8 @@ import SwiftData
     let strIngredient: String
     
     init(strIngredient: String = "") {
-            
-            id = UUID()
-            self.strIngredient = strIngredient
-        }
+        
+        id = UUID()
+        self.strIngredient = strIngredient
+    }
 }

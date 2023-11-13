@@ -40,7 +40,7 @@ struct SettingsView: View {
                 
                 Section {
                     NavigationLink(destination: ImportView()) {
-                        Label("Importer", systemImage: "square.and.arrow.down.on.square.fill")
+                        Label("Importer data", systemImage: "square.and.arrow.down.on.square.fill")
                     }
                 }
                 
@@ -56,6 +56,7 @@ struct SettingsView: View {
                   if FileManager.default.fileExists(atPath: url.path)
                   {
                     database = url.absoluteString
+                      print(database)
                   }
                 }
                 label:

@@ -4,6 +4,7 @@ import SwiftUI
 struct ImportView: View {
     @State private var categories: [Category] = []
     @State private var areas: [Area] = []
+    @State private var ingredients: [Ingredient] = []
     @State private var status = ""
     
     @Environment(\.modelContext) private var context
@@ -51,7 +52,29 @@ struct ImportView: View {
                         }
                     }
                 } label: {
-                    Label("Importer områder til databasen", systemImage: "square.and.arrow.down.on.square.fill")
+                    Label("Importer landområder til databasen", systemImage: "square.and.arrow.down.on.square.fill")
+                }
+                
+                //Button 3
+                //button 2
+                Button {
+                    Task {
+                        ingredients = await getIngredient()
+                        
+                        print(ingredients.count)
+                        
+                        if !ingredients.isEmpty {
+                            for index in 0...ingredients.count-1 {
+                                let ingredient = IngredientModel(strIngredient: ingredients[index].strIngredient)
+                                context.insert(ingredient)
+                            }
+                            status += "ingrediensene er lagret i databasen. \n "
+                        } else {
+                            status += "Error \n"
+                        }
+                    }
+                } label: {
+                    Label("Importer ingredienser til databasen", systemImage: "square.and.arrow.down.on.square.fill")
                 }
                 
                 Section("Informasjon")
@@ -76,7 +99,7 @@ struct ImportView: View {
                 {
                   Label("Slett kategorier i databasen", systemImage: "square.stack.3d.up")
                 }
-            }
+            }.navigationTitle("Importer data")
         }
     }
 }
@@ -84,7 +107,7 @@ struct ImportView: View {
 #Preview
 {
     MainActor.assumeIsolated {
-        ImportView().modelContainer(for: [CategoryModel.self, AreaModel.self])
+        ImportView().modelContainer(for: [CategoryModel.self, AreaModel.self, IngredientModel.self])
     }
 
 }

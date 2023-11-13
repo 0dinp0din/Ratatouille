@@ -9,7 +9,7 @@ struct RatatouilleApp: App {
     
     init() {
         do {
-            modelContainer = try ModelContainer(for: CategoryModel.self, AreaModel.self, RecipeModel.self)
+            modelContainer = try ModelContainer(for: CategoryModel.self, AreaModel.self, RecipeModel.self, IngredientModel.self)
         } catch {
             fatalError("Could not initialize ModelContainer")
         }
