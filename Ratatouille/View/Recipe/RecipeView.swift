@@ -10,11 +10,19 @@ struct RecipeView: View {
     var body: some View {
         NavigationStack {
             Group {
+                
+                Image("logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 100)
+                    .background()
+                
+                
                 if recipes.isEmpty {
                     ContentUnavailableView("Ingen matoppskrifter", systemImage: "square.stack.3d.up.slash")
                 }
             }
-        }
+        }.navigationTitle("Matoppskrifter")
     }
 }
 

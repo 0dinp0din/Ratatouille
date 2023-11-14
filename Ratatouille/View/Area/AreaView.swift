@@ -13,9 +13,9 @@ struct AreaView: View {
                     ContentUnavailableView("Ingen landområder", systemImage: "square.stack.3d.up.slash")
                 } else {
                     List(areas) {
-                        area in 
+                        area in
                         
-                        Text(area.strArea)
+                        AreaRow(area)
                     }
                 }
             }

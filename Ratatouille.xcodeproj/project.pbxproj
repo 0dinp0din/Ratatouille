@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF62FFD62B037FF400DD68DA /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62FFD52B037FF400DD68DA /* CategoryRow.swift */; };
 		BF62FFD82B038B2900DD68DA /* CategoryAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62FFD72B038B2900DD68DA /* CategoryAdd.swift */; };
+		BF62FFDA2B03B27B00DD68DA /* AreaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62FFD92B03B27B00DD68DA /* AreaRow.swift */; };
 		BFEB414A2B021E0D00844AE0 /* RatatouilleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB41492B021E0D00844AE0 /* RatatouilleApp.swift */; };
 		BFEB414C2B021E0D00844AE0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB414B2B021E0D00844AE0 /* MainView.swift */; };
 		BFEB41502B021E0F00844AE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB414F2B021E0F00844AE0 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		BF62FFD52B037FF400DD68DA /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		BF62FFD72B038B2900DD68DA /* CategoryAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAdd.swift; sourceTree = "<group>"; };
+		BF62FFD92B03B27B00DD68DA /* AreaRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaRow.swift; sourceTree = "<group>"; };
 		BFEB41462B021E0D00844AE0 /* Ratatouille.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratatouille.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEB41492B021E0D00844AE0 /* RatatouilleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatatouilleApp.swift; sourceTree = "<group>"; };
 		BFEB414B2B021E0D00844AE0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				BFEB41712B024B8E00844AE0 /* AreaView.swift */,
+				BF62FFD92B03B27B00DD68DA /* AreaRow.swift */,
 			);
 			path = Area;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				BFEB417B2B0278FC00844AE0 /* ImportView.swift in Sources */,
 				BFEB41722B024B8E00844AE0 /* AreaView.swift in Sources */,
 				BFEB417F2B02857700844AE0 /* AreaJson.swift in Sources */,
+				BF62FFDA2B03B27B00DD68DA /* AreaRow.swift in Sources */,
 				BFEB41782B025B3300844AE0 /* IngredientView.swift in Sources */,
 				BFEB41742B024D7C00844AE0 /* Area.swift in Sources */,
 				BFEB41612B02211F00844AE0 /* SplashView.swift in Sources */,

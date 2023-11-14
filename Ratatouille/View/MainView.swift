@@ -7,12 +7,6 @@ struct MainView: View {
     var body: some View {
         
         VStack {
-            Image("logo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 100)
-                .background()
-            
             TabView {
                 RecipeView().tabItem {
                     Label("Mine oppskrifter", systemImage: "fork.knife.circle.fill")
