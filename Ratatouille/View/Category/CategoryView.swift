@@ -15,10 +15,12 @@ struct CategoryView: View {
                 if categories.isEmpty {
                     ContentUnavailableView("Ingen kategorier", systemImage: "square.stack.3d.up.slash")
                 } else {
-                    List(categories) {
-                        category in
-                        
-                        CategoryRow(category)
+                    List {
+                        ForEach(categories) { category in
+                            NavigationLink(destination: CategoryEdit(category)) {
+                                CategoryRow(category)
+                            }
+                        }
                     }
                 }
             }
@@ -40,6 +42,7 @@ struct CategoryView: View {
               CategoryAdd()
             }
         }
+        .environment(\.colorScheme, darkMode ? .dark : .light)
     }
 }
 

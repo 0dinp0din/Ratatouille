@@ -3,48 +3,45 @@ import SwiftUI
 
 struct CategoryRow: View
 {
-  var category: CategoryModel
-  
-  init(_ category: CategoryModel)
-  {
-    self.category = category
-  }
-  
-  var body: some View
-  {
-    NavigationLink(value: category)
+    var category: CategoryModel
+    
+    init(_ category: CategoryModel)
     {
-      HStack(alignment: .center)
-      {
-        VStack(alignment: .leading)
+        self.category = category
+    }
+    
+    var body: some View
+    {
+        HStack(alignment: .center)
         {
-            HStack {
-                
-                AsyncImage(url: URL(string: category.strCategoryThumb)) { image in
-                    image.resizable()
-                        .scaledToFit()
-                        .frame(width: 150, height: 150)
-                } placeholder: {
-                    ProgressView()
+            VStack(alignment: .leading)
+            {
+                HStack {
+                    
+                    AsyncImage(url: URL(string: category.strCategoryThumb)) { image in
+                        image.resizable()
+                            .scaledToFit()
+                            .frame(width: 150, height: 150)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    
+                    Text(category.strCategory)
                 }
                 
-                Text(category.strCategory)
             }
-            
         }
-      }
-      .swipeActions(edge: .trailing, allowsFullSwipe: false)
-      {
-        Button(role: .destructive)
+        .swipeActions(edge: .trailing, allowsFullSwipe: false)
         {
-            category.trash = true
-            category.archiveDate = .now
-        }
+            Button(role: .destructive)
+            {
+                category.trash = true
+                category.archiveDate = .now
+            }
         label:
-        {
-          Image(systemName: "tray.and.arrow.down.fill")
+            {
+                Image(systemName: "tray.and.arrow.down.fill")
+            }
         }
-      }
     }
-  }
 }
