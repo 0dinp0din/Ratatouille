@@ -3,8 +3,8 @@ import SwiftData
 
 @Model class AreaModel {
     @Attribute(.unique) private var id: UUID
-    @Attribute(.unique) let strArea: String
-    let countryCode: String
+    @Attribute(.unique) var strArea: String
+    var countryCode: String
     var trash: Bool
     var archiveDate: Date
 

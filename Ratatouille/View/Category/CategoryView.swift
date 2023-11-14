@@ -3,7 +3,6 @@ import SwiftData
 
 struct CategoryView: View {
     @AppStorage("isDarkMode") var darkMode = false
-    @Environment(\.dismiss) private var dismiss
     
     @Query(filter: #Predicate<CategoryModel>{$0.trash == false}) private var categories: [CategoryModel]
     

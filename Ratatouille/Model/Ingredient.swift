@@ -3,7 +3,7 @@ import SwiftData
 
 @Model class IngredientModel {
     @Attribute(.unique) private var id: UUID
-    @Attribute(.unique) let strIngredient: String
+    @Attribute(.unique) var strIngredient: String
     var trash: Bool
     var archiveDate: Date
     

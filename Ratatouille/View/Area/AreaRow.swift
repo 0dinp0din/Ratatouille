@@ -11,40 +11,37 @@ struct AreaRow: View
   }
   
   var body: some View
-  {
-    NavigationLink(value: area)
     {
-      HStack(alignment: .center)
-      {
-        VStack(alignment: .leading)
+        HStack(alignment: .center)
         {
-            HStack {
-                
-                AsyncImage(url: URL(string: "https://flagsapi.com/\(area.countryCode)/shiny/64.png")) { image in
-                    image.resizable()
-                        .scaledToFit()
-                        .frame(width: 150, height: 150)
-                } placeholder: {
-                    ProgressView()
+            VStack(alignment: .leading)
+            {
+                HStack {
+                    
+                    AsyncImage(url: URL(string: "https://flagsapi.com/\(area.countryCode)/shiny/64.png")) { image in
+                        image.resizable()
+                            .scaledToFit()
+                            .frame(width: 150, height: 150)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    
+                    Text(area.strArea)
                 }
                 
-                Text(area.strArea)
             }
-            
         }
-      }
-      .swipeActions(edge: .trailing, allowsFullSwipe: false)
-      {
-        Button(role: .destructive)
+        .swipeActions(edge: .trailing, allowsFullSwipe: false)
         {
-            area.trash = true
-            area.archiveDate = .now
-        }
+            Button(role: .destructive)
+            {
+                area.trash = true
+                area.archiveDate = .now
+            }
         label:
-        {
-          Image(systemName: "tray.and.arrow.down.fill")
+            {
+                Image(systemName: "tray.and.arrow.down.fill")
+            }
         }
-      }
     }
-  }
 }

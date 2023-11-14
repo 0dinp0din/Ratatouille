@@ -1,20 +1,18 @@
 import SwiftUI
 
-struct CategoryAdd: View {
+struct AreaAdd: View {
     
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
-    @State var strCategory: String = ""
-    @State var strCategoryThumb: String = ""
-    @State var strCategoryDescription: String = ""
+    @State var strArea: String = ""
+    @State var countryCode: String = ""
     
     var body: some View {
         NavigationStack{
             Form{
-                TextField("Navn", text: $strCategory)
-                TextField("Url til bilde", text: $strCategoryThumb)
-                TextField("Beskrivelse", text: $strCategoryDescription)
+                TextField("Navn på landområde", text: $strArea)
+                TextField("Landskode (F.eks \"NO\")", text: $countryCode)
                 
             }.toolbar {
                 ToolbarItem(placement: .cancellationAction)
@@ -27,34 +25,28 @@ struct CategoryAdd: View {
                 
                 ToolbarItem(placement: .principal)
                 {
-                  Text("Ny kategori")
+                  Text("Nytt landsområde")
                 }
                 
                 ToolbarItem(placement: .confirmationAction)
                 {
                   Button("Lagre")
                   {
-                    let category = CategoryModel()
+                    let area = AreaModel()
                     
-                      category.strCategory = strCategory
-                      category.strCategoryThumb = strCategoryThumb
-                      category.strCategoryDescription = strCategoryDescription
-                      
-                      context.insert(category)
-                      
+                      area.strArea = strArea
+                      area.countryCode = countryCode.uppercased()
+                      context.insert(area)
                       dismiss()
                       
                   }
-                    
                 }
             }
-            
-
         }
     }
 }
 
 #Preview
 {
-  CategoryAdd(strCategory: "", strCategoryThumb: "", strCategoryDescription: "")
+  AreaAdd(strArea: "", countryCode: "")
 }
