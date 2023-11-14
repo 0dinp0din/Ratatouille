@@ -13,6 +13,8 @@ struct ImportView: View {
         
         NavigationStack {
             List {
+                
+                //Import categories
                 Button {
                     Task {
                         categories = await getCategories()
@@ -34,7 +36,7 @@ struct ImportView: View {
                 }
                 
                 
-                //button 2
+                //Import areas
                 Button {
                     Task {
                         areas = await getAreas()
@@ -55,7 +57,7 @@ struct ImportView: View {
                     Label("Importer landområder til databasen", systemImage: "square.and.arrow.down.on.square.fill")
                 }
                 
-                //Button 3
+                //Import ingredients
                 Button {
                     Task {
                         ingredients = await getIngredient()
