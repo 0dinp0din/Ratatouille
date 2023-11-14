@@ -3,10 +3,11 @@ import SwiftUI
 struct CategoryAdd: View {
     
     @Environment(\.modelContext) private var context
+    @Environment(\.dismiss) private var dismiss
     
-    @State var strCategory: String
-    @State var strCategoryThumb: String
-    @State var strCategoryDescription: String
+    @State var strCategory: String = ""
+    @State var strCategoryThumb: String = ""
+    @State var strCategoryDescription: String = ""
     
     var body: some View {
         NavigationStack{
@@ -16,6 +17,19 @@ struct CategoryAdd: View {
                 TextField("Beskrivelse", text: $strCategoryDescription)
                 
             }.toolbar {
+                ToolbarItem(placement: .cancellationAction)
+                {
+                  Button("Avbryt", role: .cancel)
+                  {
+                    dismiss()
+                  }
+                }
+                
+                ToolbarItem(placement: .principal)
+                {
+                  Text("Ny kategori")
+                }
+                
                 ToolbarItem(placement: .confirmationAction)
                 {
                   Button("Lagre")
@@ -23,6 +37,8 @@ struct CategoryAdd: View {
                     let category = CategoryModel()
                     
                       category.strCategory = strCategory
+                      category.strCategoryThumb = strCategoryThumb
+                      category.strCategoryDescription = strCategoryDescription
 
                     
                     context.insert(category)

@@ -9,6 +9,9 @@ final class RecipeModel {
     let strCategoryDescription: String
     var trash: Bool
     var archiveDate: Date
+    var category: CategoryModel?
+    var area: AreaModel?
+    var Ingredient: IngredientModel?
     
     init(
         strCategory: String = "",

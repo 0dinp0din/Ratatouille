@@ -3,8 +3,11 @@ import SwiftData
 
 struct CategoryView: View {
     @AppStorage("isDarkMode") var darkMode = false
+    @Environment(\.dismiss) private var dismiss
     
     @Query(filter: #Predicate<CategoryModel>{$0.trash == false}) private var categories: [CategoryModel]
+    
+    @State private var showSheet = false
     
     var body: some View {
         NavigationStack {
@@ -20,6 +23,22 @@ struct CategoryView: View {
                 }
             }
             .navigationTitle("Kategorier")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button
+                    {
+                      showSheet.toggle()
+                    }
+                    label:
+                    {
+                        Label("Ny kategori", systemImage: "plus.circle.fill")
+                    }
+                }
+            }      
+            .sheet(isPresented: $showSheet)
+            {
+              CategoryAdd()
+            }
         }
     }
 }
