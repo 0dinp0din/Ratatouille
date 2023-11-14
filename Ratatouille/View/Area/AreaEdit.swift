@@ -33,8 +33,8 @@ struct AreaEdit: View
             }
         }
         .onAppear {
-            area.strArea = strArea
-            area.countryCode = countryCode
+            strArea = area.strArea
+            countryCode = area.countryCode
 
         }
         .toolbar
