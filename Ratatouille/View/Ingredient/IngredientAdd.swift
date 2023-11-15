@@ -4,6 +4,7 @@ struct IngredientAdd: View {
     
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
+    @AppStorage("isDarkMode") private var darkMode = false
     
     @State var strIngredient: String = ""
     

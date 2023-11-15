@@ -4,6 +4,7 @@ struct CategoryAdd: View {
     
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
+    @AppStorage("isDarkMode") private var darkMode = false
     
     @State var strCategory: String = ""
     @State var strCategoryThumb: String = ""

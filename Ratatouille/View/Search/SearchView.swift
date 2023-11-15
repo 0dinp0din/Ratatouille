@@ -4,7 +4,7 @@ struct SearchView: View {
     @State private var recipes: [Recipe] = []
     
     @AppStorage("isDarkMode") private var darkMode = false
-    @State private var selectedButtonIndex: Int = 0
+    @State private var selectedButtonIndex: Int = 5
     private let buttonIcons = ["globe", "rectangle.3.group.bubble", "carrot.fill", "magnifyingglass"]
     @State var showSheet = false
     

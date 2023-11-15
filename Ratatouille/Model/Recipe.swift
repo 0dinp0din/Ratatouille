@@ -6,7 +6,7 @@ final class RecipeModel {
     @Attribute(.unique) private var id: UUID
     var strMeal: String
     let strCategory: String
-    let strCategoryThumb: String
+    let strMealThumb: String
     let strCategoryDescription: String
     var trash: Bool
     var archiveDate: Date
@@ -17,7 +17,7 @@ final class RecipeModel {
     init(
         strMeal: String = "",
         strCategory: String = "",
-        strCategoryThumb: String = "",
+        strMealThumb: String = "",
         strCategoryDescription: String = "",
         trash: Bool = false,
         archiveDate: Date = .now) {
@@ -25,7 +25,7 @@ final class RecipeModel {
             id = UUID()
             self.strMeal = strMeal
             self.strCategory = strCategory
-            self.strCategoryThumb = strCategoryThumb
+            self.strMealThumb = strMealThumb
             self.strCategoryDescription = strCategoryDescription
             self.trash = trash
             self.archiveDate = archiveDate

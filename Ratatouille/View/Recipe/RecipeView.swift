@@ -5,7 +5,7 @@ struct RecipeView: View {
     
     @AppStorage("isDarkMode") private var darkMode = false
     
-    @Query private var recipes: [RecipeModel]
+    @Query(filter: #Predicate<RecipeModel>{$0.trash == false}) private var recipes: [RecipeModel]
     
     var body: some View {
         NavigationStack {
@@ -20,6 +20,12 @@ struct RecipeView: View {
                 
                 if recipes.isEmpty {
                     ContentUnavailableView("Ingen matoppskrifter", systemImage: "square.stack.3d.up.slash")
+                } else {
+                    List {
+                        ForEach(recipes) { recipe in
+                            Text(recipe.strMeal)
+                        }
+                    }
                 }
             }
         }.navigationTitle("Matoppskrifter")

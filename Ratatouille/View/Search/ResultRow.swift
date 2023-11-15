@@ -3,7 +3,7 @@ import SwiftUI
 
 struct ResultRow: View
 {
-    
+    @Environment(\.modelContext) private var context
     @State private var recipe: Recipe
   
       init(_ recipe: Recipe) {
@@ -34,9 +34,13 @@ struct ResultRow: View
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: false)
         {
-            Button(role: .destructive)
+            Button()
             {
-                
+                let recipe = RecipeModel(
+                    strMeal: recipe.strMeal ?? "Unknown",
+                    strMealThumb: recipe.strMealThumb ?? "Unknown"
+                )
+                context.insert(recipe)
             }
         label:
             {
