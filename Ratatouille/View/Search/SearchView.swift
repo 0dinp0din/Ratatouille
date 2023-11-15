@@ -5,7 +5,8 @@ struct SearchView: View {
     
     @AppStorage("isDarkMode") private var darkMode = false
     @State private var selectedButtonIndex: Int = 0
-    private let buttonIcons = ["square", "circle", "triangle", "star"]
+    private let buttonIcons = ["globe", "rectangle.3.group.bubble", "carrot.fill", "magnifyingglass"]
+    @State var showSheet = false
     
     var body: some View {
         NavigationStack {
@@ -28,14 +29,19 @@ struct SearchView: View {
                         }
                         .pickerStyle(SegmentedPickerStyle())
                         .padding()
+                        .onChange(of: selectedButtonIndex) {
+                            showSheet = true
+                        }
+                        .sheet(isPresented: $showSheet,onDismiss: {showSheet = false}, content: {
+                            SearchModal(selectedButtonIndex: $selectedButtonIndex, updateData: { recipes in
+                                self.recipes = recipes
+                            }).presentationDetents([.medium]).presentationDragIndicator(.visible)
+                            })
                     }
                 }
             }
             
-            
-            
         }
-        
     }
 }
 

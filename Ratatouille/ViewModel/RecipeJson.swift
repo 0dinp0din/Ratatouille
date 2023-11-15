@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RecipeResponse: Decodable {
-    let recipe: [Recipe]
+    let meals: [Recipe]
 }
 
 struct Recipe: Identifiable, Decodable {
@@ -51,7 +51,7 @@ func getRecipes(url: String) async -> [Recipe]
 
     let (data, _) = try await URLSession.shared.data(from: connection)
       
-      return try JSONDecoder().decode(RecipeResponse.self, from: data).recipe
+      return try JSONDecoder().decode(RecipeResponse.self, from: data).meals
   }
   catch
   {

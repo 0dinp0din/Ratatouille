@@ -27,6 +27,7 @@ struct ResultRow: View
                     }
                     
                     Text(area.strArea)*/
+                    Text(recipe.strMeal ?? "Unknown")
                 }
                 
             }
