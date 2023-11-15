@@ -4,29 +4,29 @@ import SwiftData
 @Model 
 final class RecipeModel {
     @Attribute(.unique) private var id: UUID
-    var strMeal: String
-    let strCategory: String
-    let strMealThumb: String
-    let strCategoryDescription: String
+    @Attribute(.unique) var strMeal: String
+    var strMealThumb: String
+    var strInstructions: String
     var trash: Bool
     var archiveDate: Date
+    var favorite: Bool
     var category: CategoryModel?
     var area: AreaModel?
     var Ingredient: IngredientModel?
     
     init(
         strMeal: String = "",
-        strCategory: String = "",
         strMealThumb: String = "",
-        strCategoryDescription: String = "",
+        favorite: Bool = false,
+        strInstructions: String = "",
         trash: Bool = false,
         archiveDate: Date = .now) {
             
             id = UUID()
             self.strMeal = strMeal
-            self.strCategory = strCategory
             self.strMealThumb = strMealThumb
-            self.strCategoryDescription = strCategoryDescription
+            self.favorite = favorite
+            self.strInstructions = strInstructions
             self.trash = trash
             self.archiveDate = archiveDate
         }

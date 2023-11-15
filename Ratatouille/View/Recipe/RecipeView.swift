@@ -23,7 +23,10 @@ struct RecipeView: View {
                 } else {
                     List {
                         ForEach(recipes) { recipe in
-                            Text(recipe.strMeal)
+                            
+                            NavigationLink(destination: RecipeEdit(recipe)) {
+                                RecipeRow(recipe)
+                            }
                         }
                     }
                 }

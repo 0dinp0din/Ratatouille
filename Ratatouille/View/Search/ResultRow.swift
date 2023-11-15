@@ -18,16 +18,17 @@ struct ResultRow: View
             {
                 HStack {
                     
-                    /*AsyncImage(url: URL(string: "https://flagsapi.com/\(area.countryCode)/shiny/64.png")) { image in
+                    AsyncImage(url: URL(string: recipe.strMealThumb ?? "")) { image in
                         image.resizable()
                             .scaledToFit()
-                            .frame(width: 50, height: 50)
+                            .frame(width: 75, height: 75)
+                            .clipShape(Circle())
                     } placeholder: {
                         ProgressView()
                     }
-                    
-                    Text(area.strArea)*/
-                    Text(recipe.strMeal ?? "Unknown")
+                    VStack {
+                        Text(recipe.strMeal ?? "Unknown title").font(.title2)
+                    }
                 }
                 
             }
@@ -37,7 +38,7 @@ struct ResultRow: View
             Button()
             {
                 let recipe = RecipeModel(
-                    strMeal: recipe.strMeal ?? "Unknown",
+                    strMeal: recipe.strMeal ?? "Unknown title",
                     strMealThumb: recipe.strMealThumb ?? "Unknown"
                 )
                 context.insert(recipe)
