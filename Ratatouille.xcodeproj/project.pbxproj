@@ -20,6 +20,7 @@
 		BFBAC6EE2B04C7BB00841FDE /* ArchiveIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC6ED2B04C7BB00841FDE /* ArchiveIngredient.swift */; };
 		BFBAC6F02B04C7D200841FDE /* ArchiveCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC6EF2B04C7D200841FDE /* ArchiveCategory.swift */; };
 		BFBAC6F22B04C7DE00841FDE /* ArchiveRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC6F12B04C7DE00841FDE /* ArchiveRecipe.swift */; };
+		BFBAC6F52B04E69E00841FDE /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC6F42B04E69E00841FDE /* ResultRow.swift */; };
 		BFEB414A2B021E0D00844AE0 /* RatatouilleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB41492B021E0D00844AE0 /* RatatouilleApp.swift */; };
 		BFEB414C2B021E0D00844AE0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB414B2B021E0D00844AE0 /* MainView.swift */; };
 		BFEB41502B021E0F00844AE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB414F2B021E0F00844AE0 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		BFBAC6ED2B04C7BB00841FDE /* ArchiveIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveIngredient.swift; sourceTree = "<group>"; };
 		BFBAC6EF2B04C7D200841FDE /* ArchiveCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCategory.swift; sourceTree = "<group>"; };
 		BFBAC6F12B04C7DE00841FDE /* ArchiveRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveRecipe.swift; sourceTree = "<group>"; };
+		BFBAC6F42B04E69E00841FDE /* ResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRow.swift; sourceTree = "<group>"; };
 		BFEB41462B021E0D00844AE0 /* Ratatouille.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratatouille.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEB41492B021E0D00844AE0 /* RatatouilleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatatouilleApp.swift; sourceTree = "<group>"; };
 		BFEB414B2B021E0D00844AE0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				BFEB415C2B02205F00844AE0 /* SearchView.swift */,
+				BFBAC6F42B04E69E00841FDE /* ResultRow.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				BFBAC6F22B04C7DE00841FDE /* ArchiveRecipe.swift in Sources */,
 				BFEB41762B025A9C00844AE0 /* CategoryView.swift in Sources */,
 				BFBAC6EE2B04C7BB00841FDE /* ArchiveIngredient.swift in Sources */,
+				BFBAC6F52B04E69E00841FDE /* ResultRow.swift in Sources */,
 				BFBAC6F02B04C7D200841FDE /* ArchiveCategory.swift in Sources */,
 				BFEB41692B022D5300844AE0 /* Recipe.swift in Sources */,
 				BF62FFDC2B03E51300DD68DA /* CategoryEdit.swift in Sources */,
