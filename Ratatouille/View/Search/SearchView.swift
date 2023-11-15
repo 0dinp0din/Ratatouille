@@ -14,7 +14,10 @@ struct SearchView: View {
                 
                 List {
                     ForEach(recipes) { recipe in
-                        ResultRow(recipe)
+                        
+                        NavigationLink(destination: ResultView(recipe)) {
+                            ResultRow(recipe)
+                        }
                     }
                 }
             }

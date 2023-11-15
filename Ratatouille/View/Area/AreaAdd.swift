@@ -44,6 +44,7 @@ struct AreaAdd: View {
                 }
             }
         }
+        .environment(\.colorScheme, darkMode ? .dark : .light)
     }
 }
 

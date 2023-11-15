@@ -16,11 +16,17 @@ struct RecipeEdit: View
     }
     
     @Environment(\.dismiss) private var dismiss
+    @AppStorage("isDarkMode") private var darkMode = false
     
     @State var strMeal: String = ""
+    @State var strInstructions: String = ""
     
     var body: some View {
         Form {
+            TextField("Navn", text: $strMeal)
+            TextField("Instruksjon", text: $strInstructions)
+            
+            
             Picker("Landområde", selection: $area) {
                 Text("Velg et landområde").tag(nil as AreaModel?)
                 ForEach(areas) {
@@ -53,10 +59,9 @@ struct RecipeEdit: View
         .onAppear {
             
             area = recipe.area
-            /*
-            strArea = area.strArea
-            countryCode = area.countryCode*/
-
+            category = recipe.category
+            strMeal = recipe.strMeal
+            strInstructions = recipe.strInstructions
         }
         .toolbar
         {
@@ -77,14 +82,16 @@ struct RecipeEdit: View
             {
                 Button("Lagre")
                 {
-                    /*
-                    area.strArea = strArea
-                    area.countryCode = countryCode.uppercased()*/
+                    recipe.area = area
+                    recipe.category = category
+                    recipe.strMeal = strMeal
+                    recipe.strInstructions = strInstructions
                     
                     dismiss()
                 }
             }
         }
         .navigationBarBackButtonHidden()
+        .environment(\.colorScheme, darkMode ? .dark : .light)
     }
 }

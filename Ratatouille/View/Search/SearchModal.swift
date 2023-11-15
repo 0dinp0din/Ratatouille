@@ -148,7 +148,3 @@ struct SearchModal: View {
 
     }
 }
-
-/*#Preview {
-    SearchModal()
-}*/

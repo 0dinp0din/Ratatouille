@@ -41,6 +41,7 @@ struct IngredientAdd: View {
                 }
             }
         }
+        .environment(\.colorScheme, darkMode ? .dark : .light)
     }
 }
 

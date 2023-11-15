@@ -38,3 +38,25 @@ func getRecipes(url: String) async -> [Recipe]
     return [Recipe]()
   }
 }
+
+func getRecipeId(url: String) async -> [Recipe]
+{
+  guard let connection = URL(string: url) else
+  {
+    return [Recipe]()
+  }
+  
+  do
+  {
+
+    let (data, _) = try await URLSession.shared.data(from: connection)
+      
+      return try JSONDecoder().decode(RecipeResponse.self, from: data).meals
+  }
+  catch
+  {
+      print(error)
+    return [Recipe]()
+  }
+}
+

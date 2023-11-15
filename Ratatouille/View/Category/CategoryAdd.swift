@@ -49,9 +49,8 @@ struct CategoryAdd: View {
                     
                 }
             }
-            
-
         }
+        .environment(\.colorScheme, darkMode ? .dark : .light)
     }
 }
 

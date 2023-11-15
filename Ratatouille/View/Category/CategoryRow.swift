@@ -21,12 +21,13 @@ struct CategoryRow: View
                     AsyncImage(url: URL(string: category.strCategoryThumb)) { image in
                         image.resizable()
                             .scaledToFit()
-                            .frame(width: 150, height: 150)
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
                     } placeholder: {
                         ProgressView()
                     }
                     
-                    Text(category.strCategory)
+                    Text(category.strCategory).font(.title2)
                 }
                 
             }

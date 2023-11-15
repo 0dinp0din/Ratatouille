@@ -32,6 +32,7 @@ struct RecipeView: View {
                 }
             }
         }.navigationTitle("Matoppskrifter")
+        .environment(\.colorScheme, darkMode ? .dark : .light)
     }
 }
 
