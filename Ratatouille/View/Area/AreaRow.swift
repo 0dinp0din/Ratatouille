@@ -21,7 +21,7 @@ struct AreaRow: View
                     AsyncImage(url: URL(string: "https://flagsapi.com/\(area.countryCode)/shiny/64.png")) { image in
                         image.resizable()
                             .scaledToFit()
-                            .frame(width: 150, height: 150)
+                            .frame(width: 50, height: 50)
                     } placeholder: {
                         ProgressView()
                     }

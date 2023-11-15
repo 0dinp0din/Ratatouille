@@ -57,7 +57,7 @@ struct AreaEdit: View
                 Button("Lagre")
                 {
                     area.strArea = strArea
-                    area.countryCode = countryCode
+                    area.countryCode = countryCode.uppercased()
                     
                     dismiss()
                 }

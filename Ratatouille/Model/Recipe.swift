@@ -4,6 +4,7 @@ import SwiftData
 @Model 
 final class RecipeModel {
     @Attribute(.unique) private var id: UUID
+    var strMeal: String
     let strCategory: String
     let strCategoryThumb: String
     let strCategoryDescription: String
@@ -14,6 +15,7 @@ final class RecipeModel {
     var Ingredient: IngredientModel?
     
     init(
+        strMeal: String = "",
         strCategory: String = "",
         strCategoryThumb: String = "",
         strCategoryDescription: String = "",
@@ -21,6 +23,7 @@ final class RecipeModel {
         archiveDate: Date = .now) {
             
             id = UUID()
+            self.strMeal = strMeal
             self.strCategory = strCategory
             self.strCategoryThumb = strCategoryThumb
             self.strCategoryDescription = strCategoryDescription

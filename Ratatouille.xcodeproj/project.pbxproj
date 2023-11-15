@@ -16,6 +16,10 @@
 		BF62FFE22B03F7C100DD68DA /* IngredientEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62FFE12B03F7C100DD68DA /* IngredientEdit.swift */; };
 		BF62FFE42B03FE8600DD68DA /* AreaAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62FFE32B03FE8600DD68DA /* AreaAdd.swift */; };
 		BF62FFE62B03FE9900DD68DA /* AreaEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62FFE52B03FE9900DD68DA /* AreaEdit.swift */; };
+		BFBAC6EC2B04C7AC00841FDE /* ArchiveArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC6EB2B04C7AC00841FDE /* ArchiveArea.swift */; };
+		BFBAC6EE2B04C7BB00841FDE /* ArchiveIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC6ED2B04C7BB00841FDE /* ArchiveIngredient.swift */; };
+		BFBAC6F02B04C7D200841FDE /* ArchiveCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC6EF2B04C7D200841FDE /* ArchiveCategory.swift */; };
+		BFBAC6F22B04C7DE00841FDE /* ArchiveRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAC6F12B04C7DE00841FDE /* ArchiveRecipe.swift */; };
 		BFEB414A2B021E0D00844AE0 /* RatatouilleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB41492B021E0D00844AE0 /* RatatouilleApp.swift */; };
 		BFEB414C2B021E0D00844AE0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB414B2B021E0D00844AE0 /* MainView.swift */; };
 		BFEB41502B021E0F00844AE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEB414F2B021E0F00844AE0 /* Assets.xcassets */; };
@@ -49,6 +53,10 @@
 		BF62FFE12B03F7C100DD68DA /* IngredientEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientEdit.swift; sourceTree = "<group>"; };
 		BF62FFE32B03FE8600DD68DA /* AreaAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaAdd.swift; sourceTree = "<group>"; };
 		BF62FFE52B03FE9900DD68DA /* AreaEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaEdit.swift; sourceTree = "<group>"; };
+		BFBAC6EB2B04C7AC00841FDE /* ArchiveArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveArea.swift; sourceTree = "<group>"; };
+		BFBAC6ED2B04C7BB00841FDE /* ArchiveIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveIngredient.swift; sourceTree = "<group>"; };
+		BFBAC6EF2B04C7D200841FDE /* ArchiveCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveCategory.swift; sourceTree = "<group>"; };
+		BFBAC6F12B04C7DE00841FDE /* ArchiveRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveRecipe.swift; sourceTree = "<group>"; };
 		BFEB41462B021E0D00844AE0 /* Ratatouille.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratatouille.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEB41492B021E0D00844AE0 /* RatatouilleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatatouilleApp.swift; sourceTree = "<group>"; };
 		BFEB414B2B021E0D00844AE0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -84,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFBAC6F32B04CF0C00841FDE /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BFEB415C2B02205F00844AE0 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		BFEB413D2B021E0D00844AE0 = {
 			isa = PBXGroup;
 			children = (
@@ -126,8 +142,8 @@
 			children = (
 				BFEB414B2B021E0D00844AE0 /* MainView.swift */,
 				BFEB41602B02211F00844AE0 /* SplashView.swift */,
-				BFEB415C2B02205F00844AE0 /* SearchView.swift */,
 				BFEB415E2B02207300844AE0 /* SettingsView.swift */,
+				BFBAC6F32B04CF0C00841FDE /* Search */,
 				BFEB416C2B02350400844AE0 /* Recipe */,
 				BFEB416D2B024AC900844AE0 /* Area */,
 				BFEB416E2B024AE900844AE0 /* Category */,
@@ -205,6 +221,10 @@
 			isa = PBXGroup;
 			children = (
 				BFEB41802B0289DB00844AE0 /* ArchiveView.swift */,
+				BFBAC6EB2B04C7AC00841FDE /* ArchiveArea.swift */,
+				BFBAC6ED2B04C7BB00841FDE /* ArchiveIngredient.swift */,
+				BFBAC6EF2B04C7D200841FDE /* ArchiveCategory.swift */,
+				BFBAC6F12B04C7DE00841FDE /* ArchiveRecipe.swift */,
 			);
 			path = Archive;
 			sourceTree = "<group>";
@@ -295,7 +315,10 @@
 				BFEB41662B022D0900844AE0 /* RecipeJson.swift in Sources */,
 				BF62FFE22B03F7C100DD68DA /* IngredientEdit.swift in Sources */,
 				BFEB414C2B021E0D00844AE0 /* MainView.swift in Sources */,
+				BFBAC6F22B04C7DE00841FDE /* ArchiveRecipe.swift in Sources */,
 				BFEB41762B025A9C00844AE0 /* CategoryView.swift in Sources */,
+				BFBAC6EE2B04C7BB00841FDE /* ArchiveIngredient.swift in Sources */,
+				BFBAC6F02B04C7D200841FDE /* ArchiveCategory.swift in Sources */,
 				BFEB41692B022D5300844AE0 /* Recipe.swift in Sources */,
 				BF62FFDC2B03E51300DD68DA /* CategoryEdit.swift in Sources */,
 				BFEB415F2B02207300844AE0 /* SettingsView.swift in Sources */,
@@ -311,6 +334,7 @@
 				BF62FFDA2B03B27B00DD68DA /* AreaRow.swift in Sources */,
 				BFEB41782B025B3300844AE0 /* IngredientView.swift in Sources */,
 				BFEB41742B024D7C00844AE0 /* Area.swift in Sources */,
+				BFBAC6EC2B04C7AC00841FDE /* ArchiveArea.swift in Sources */,
 				BF62FFE62B03FE9900DD68DA /* AreaEdit.swift in Sources */,
 				BF62FFE42B03FE8600DD68DA /* AreaAdd.swift in Sources */,
 				BFEB41612B02211F00844AE0 /* SplashView.swift in Sources */,
