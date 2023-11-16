@@ -5,9 +5,12 @@ struct ResultRow: View
 {
     @Environment(\.modelContext) private var context
     @State private var recipe: Recipe
+    @State private var recipeId: String
   
-      init(_ recipe: Recipe) {
+    init(recipe: Recipe, recipeId: String) {
         self.recipe = recipe
+        self.recipeId = recipeId
+          
       }
   
   var body: some View
@@ -38,8 +41,9 @@ struct ResultRow: View
             Button()
             {
                 let recipe = RecipeModel(
-                    strMeal: recipe.strMeal ?? "Unknown title",
-                    strMealThumb: recipe.strMealThumb ?? "Unknown"
+                    strMeal: recipe.strMeal ?? "Ukjent tittel",
+                    strMealThumb: recipe.strMealThumb ?? "https://media.npr.org/assets/img/2016/07/21/emptyplate3_sq-e28860c5cd33831be0ae73b3508394d777c1bd8a.jpg",
+                    strInstructions: recipe.strInstructions ?? ""
                 )
                 context.insert(recipe)
             }
@@ -47,6 +51,8 @@ struct ResultRow: View
             {
                 Image(systemName: "square.grid.3x1.folder.fill.badge.plus")
             }
+        }.task {
+            recipe = await getRecipes(url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(recipeId)").first!
         }
     }
 }

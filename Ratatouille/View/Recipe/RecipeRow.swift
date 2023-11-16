@@ -27,7 +27,8 @@ struct RecipeRow: View
                         ProgressView()
                     }
                     VStack {
-                        Text(recipe.strMeal).font(.title2)
+                        Text(recipe.strMeal).font(.title2).frame(maxWidth: .infinity, alignment: .leading)
+                        Text(recipe.area?.strArea ?? "Ukjent område").frame(maxWidth: .infinity, alignment: .leading)
                     }
                     
                     

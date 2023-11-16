@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF3D01D32B06BB5300673E2B /* ShowRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3D01D22B06BB5300673E2B /* ShowRecipeView.swift */; };
 		BF62FFD62B037FF400DD68DA /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62FFD52B037FF400DD68DA /* CategoryRow.swift */; };
 		BF62FFD82B038B2900DD68DA /* CategoryAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62FFD72B038B2900DD68DA /* CategoryAdd.swift */; };
 		BF62FFDA2B03B27B00DD68DA /* AreaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62FFD92B03B27B00DD68DA /* AreaRow.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF3D01D22B06BB5300673E2B /* ShowRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRecipeView.swift; sourceTree = "<group>"; };
 		BF62FFD52B037FF400DD68DA /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		BF62FFD72B038B2900DD68DA /* CategoryAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAdd.swift; sourceTree = "<group>"; };
 		BF62FFD92B03B27B00DD68DA /* AreaRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaRow.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				BFEB415A2B02205200844AE0 /* RecipeView.swift */,
 				BFBAC6F82B05177800841FDE /* RecipeRow.swift */,
 				BFBAC6FA2B05178400841FDE /* RecipeEdit.swift */,
+				BF3D01D22B06BB5300673E2B /* ShowRecipeView.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				BF62FFE02B03F7B800DD68DA /* IngredientAdd.swift in Sources */,
 				BFEB41662B022D0900844AE0 /* RecipeJson.swift in Sources */,
 				BF62FFE22B03F7C100DD68DA /* IngredientEdit.swift in Sources */,
+				BF3D01D32B06BB5300673E2B /* ShowRecipeView.swift in Sources */,
 				BFEB414C2B021E0D00844AE0 /* MainView.swift in Sources */,
 				BFBAC6F22B04C7DE00841FDE /* ArchiveRecipe.swift in Sources */,
 				BFBAC6FB2B05178400841FDE /* RecipeEdit.swift in Sources */,

@@ -24,9 +24,10 @@ struct RecipeView: View {
                     List {
                         ForEach(recipes) { recipe in
                             
-                            NavigationLink(destination: RecipeEdit(recipe)) {
+                            NavigationLink(destination: ShowRecipeView(recipe)) {
                                 RecipeRow(recipe)
                             }
+                            
                         }
                     }
                 }

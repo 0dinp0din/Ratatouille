@@ -3,12 +3,16 @@ import SwiftUI
 struct ResultView: View
 {
     @Environment(\.modelContext) private var context
+    
     @State private var recipe: Recipe
+    @State private var recipeId: String
   
-      init(_ recipe: Recipe) {
+    init(recipe: Recipe, recipeId: String) {
         self.recipe = recipe
+        self.recipeId = recipeId
+          
       }
-  
+    
   var body: some View
     {
         NavigationStack {
@@ -22,14 +26,15 @@ struct ResultView: View
                         ProgressView()
                     }
                     
+                    Section("Instruksjon") {
+                        Text(recipe.strInstructions ?? "Unknown")
+                    }
                 }
             }
+        }.task {
+            recipe = await getRecipes(url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(recipeId)").first!
         }
 
 
     }
-}
-
-#Preview {
-    ResultView(Recipe(idMeal: "23", strMeal: "Lapskaus", strCategory: "", strInstructions: "wsss", strMealThumb: "https://www.themealdb.com/images/media/meals/q8sp3j1593349686.jpg", strTags: "sddds", strArea: "sddsds"))
 }

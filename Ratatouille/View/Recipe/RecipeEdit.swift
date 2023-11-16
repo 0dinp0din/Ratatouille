@@ -22,75 +22,78 @@ struct RecipeEdit: View
     @State var strInstructions: String = ""
     
     var body: some View {
-        Form {
-            TextField("Navn", text: $strMeal)
-            TextField("Instruksjon", text: $strInstructions)
-            
-            
-            Picker("Landområde", selection: $area) {
-                Text("Velg et landområde").tag(nil as AreaModel?)
-                ForEach(areas) {
-                    area in Text(area.strArea).tag(area as AreaModel?)
+        NavigationStack {
+            Form {
+                TextField("Navn", text: $strMeal)
+                TextField("Instruksjon", text: $strInstructions)
+                
+                
+                Picker("Landområde", selection: $area) {
+                    Text("Velg et landområde").tag(nil as AreaModel?)
+                    ForEach(areas) {
+                        area in Text(area.strArea).tag(area as AreaModel?)
+                    }
                 }
-            }
-            
-            Picker("Kategori", selection: $category)
-            {
-                Text("Velg kategori").tag(nil as CategoryModel?)
-                ForEach(categories) {
-                    category in Text(category.strCategory).tag(category as CategoryModel?)
-                }
-            }
-            
-            Section
-            {
-                Button(role: .destructive) {
-                    recipe.archiveDate = .now
-                    recipe.trash = true
-                    dismiss()
-                }
-            label:
+                
+                Picker("Kategori", selection: $category)
                 {
-                    Label("Arkiver matoppskrift", systemImage: "archivebox.fill")
+                    Text("Velg kategori").tag(nil as CategoryModel?)
+                    ForEach(categories) {
+                        category in Text(category.strCategory).tag(category as CategoryModel?)
+                    }
+                }
+                
+                Section
+                {
+                    Button(role: .destructive) {
+                        recipe.archiveDate = .now
+                        recipe.trash = true
+                        dismiss()
+                    }
+                label:
+                    {
+                        Label("Arkiver matoppskrift", systemImage: "archivebox.fill")
+                    }
+                }
+            }
+            
+            .onAppear {
+                
+                area = recipe.area
+                category = recipe.category
+                strMeal = recipe.strMeal
+                strInstructions = recipe.strInstructions
+            }
+            .toolbar
+            {
+                ToolbarItem(placement: .cancellationAction)
+                {
+                    Button("Avbryt", role: .cancel)
+                    {
+                        dismiss()
+                    }
+                }
+                
+                ToolbarItem(placement: .principal)
+                {
+                    Text("Redigere matoppskrift")
+                }
+                
+                ToolbarItem(placement: .confirmationAction)
+                {
+                    Button("Lagre")
+                    {
+                        recipe.area = area
+                        recipe.category = category
+                        recipe.strMeal = strMeal
+                        recipe.strInstructions = strInstructions
+                        
+                        dismiss()
+                    }
                 }
             }
         }
 
-        .onAppear {
-            
-            area = recipe.area
-            category = recipe.category
-            strMeal = recipe.strMeal
-            strInstructions = recipe.strInstructions
-        }
-        .toolbar
-        {
-            ToolbarItem(placement: .cancellationAction)
-            {
-                Button("Avbryt", role: .cancel)
-                {
-                    dismiss()
-                }
-            }
-            
-            ToolbarItem(placement: .principal)
-            {
-                Text("Redigere matoppskrift")
-            }
-            
-            ToolbarItem(placement: .confirmationAction)
-            {
-                Button("Lagre")
-                {
-                    recipe.area = area
-                    recipe.category = category
-                    recipe.strMeal = strMeal
-                    recipe.strInstructions = strInstructions
-                    
-                    dismiss()
-                }
-            }
-        }
         .navigationBarBackButtonHidden()
         .environment(\.colorScheme, darkMode ? .dark : .light)
     }

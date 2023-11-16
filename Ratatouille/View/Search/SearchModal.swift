@@ -144,7 +144,7 @@ struct SearchModal: View {
             default:
                 Text("Error")
             }
-        }
+        }.environment(\.colorScheme, darkMode ? .dark : .light)
 
     }
 }
