@@ -27,8 +27,10 @@ struct ShowRecipeView: View
         
         NavigationStack {
             
-            Group {
-                Text(recipe.strMeal ).font(.largeTitle)
+            List {
+                Text(recipe.strMeal )
+                    .font(.largeTitle)
+                    .frame(maxWidth: .infinity, alignment: .center)
                 AsyncImage(url: URL(string: recipe.strMealThumb )) { image in
                     image.resizable()
                         .scaledToFit()
@@ -36,7 +38,6 @@ struct ShowRecipeView: View
                     ProgressView()
                 }
                 
-                Spacer()
                 Text("Instruksjon")
                     .font(.title2)
                     .frame(maxWidth: .infinity, alignment: .center)

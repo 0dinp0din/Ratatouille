@@ -12,7 +12,6 @@ final class RecipeModel {
     var favorite: Bool
     var category: CategoryModel?
     var area: AreaModel?
-    var Ingredient: IngredientModel?
     
     init(
         strMeal: String = "",

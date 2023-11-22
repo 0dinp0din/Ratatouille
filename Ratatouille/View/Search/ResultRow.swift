@@ -6,6 +6,7 @@ struct ResultRow: View
     @Environment(\.modelContext) private var context
     @State private var recipe: Recipe
     @State private var recipeId: String
+    @State private var showAlert = false
   
     init(recipe: Recipe, recipeId: String) {
         self.recipe = recipe
@@ -46,6 +47,7 @@ struct ResultRow: View
                     strInstructions: recipe.strInstructions ?? ""
                 )
                 context.insert(recipe)
+                showAlert = true
             }
         label:
             {
@@ -53,6 +55,8 @@ struct ResultRow: View
             }
         }.task {
             recipe = await getRecipes(url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(recipeId)").first!
+        }.alert(isPresented: $showAlert) {
+            Alert(title: Text("Matoppskriften er lagret"), dismissButton: .default(Text("Bekreft")))
         }
     }
 }

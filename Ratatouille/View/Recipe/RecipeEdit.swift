@@ -25,7 +25,7 @@ struct RecipeEdit: View
         NavigationStack {
             Form {
                 TextField("Navn", text: $strMeal)
-                TextField("Instruksjon", text: $strInstructions)
+                TextField("Instruksjon", text: $strInstructions, axis: .vertical).lineLimit(2...4)
                 
                 
                 Picker("Landområde", selection: $area) {
