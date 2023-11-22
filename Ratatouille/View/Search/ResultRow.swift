@@ -54,7 +54,18 @@ struct ResultRow: View
                 Image(systemName: "square.grid.3x1.folder.fill.badge.plus")
             }
         }.task {
-            recipe = await getRecipes(url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(recipeId)").first!
+            do {
+                let recipes = try await getRecipes(url: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(recipeId)")
+                
+                if let firstRecipe = recipes.first {
+                    print("No meal name")
+                } else {
+                    print("No recipes found")
+                }
+            } catch {
+                print("Error fetching recipes")
+            }
+
         }.alert(isPresented: $showAlert) {
             Alert(title: Text("Matoppskriften er lagret"), dismissButton: .default(Text("Bekreft")))
         }
